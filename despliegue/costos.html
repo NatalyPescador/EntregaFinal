@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costos</title>
+    <link rel="icon" href="../Imagenes/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../Imagenes/Logo Sena.png" class="logo"/>
+                <!-- <h1>Entrega Final</h1> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../tema1.html">Implementación</a></li>
+                    <li><a href="../tema2.html" class="selected">Despliegue</a></li>
+                    <li><a href="../tema3.html">Documentación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content-body">
+            <div class="table">
+                <h2>Tabla de Contenido</h2>
+                <ul>
+                    <li><a href="#estimacion-costos">Estimación de Costos</a>
+                        <ul>
+                            <li><a href="#costos-aws">Costos de AWS</a></li>
+                            <li><a href="#costos-herramientas">Costos de Herramientas</a></li>
+                            <li><a href="#escalamiento-usuarios">Escalamiento de Usuarios</a></li>
+                            <li><a href="#estimacion-total-costos-mensuales">Estimación Total de Costos Mensuales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-info">
+                <h2 id="estimacion-costos">4. Estimación de Costos</h2>
+
+            <h3 id="costos-aws">4.1. Costos de AWS</h3>
+            <ul>
+                <li>EC2:
+                    <ul>
+                        <li>t3.medium: Aproximadamente $0.0416 por hora.</li>
+                        <li>t3.large: Aproximadamente $0.0832 por hora.</li>
+                    </ul>
+                </li>
+                <li>RDS:
+                    <ul>
+                        <li>db.t3.medium: Aproximadamente $0.034 por hora.</li>
+                        <li>db.m5.large: Aproximadamente $0.096 por hora.</li>
+                    </ul>
+                </li>
+                <li>S3:
+                    <ul>
+                        <li>Almacenamiento estándar: $0.023 por GB al mes.</li>
+                    </ul>
+                </li>
+                <li>Elastic Load Balancer:
+                    <ul>
+                        <li>Aproximadamente $0.0225 por hora más $0.008 por GB de datos procesados.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 id="costos-herramientas">4.2. Costos de Herramientas</h3>
+            <ul>
+                <li>Jenkins:
+                    <ul>
+                        <li>Uso de instancias EC2 para alojar Jenkins.</li>
+                    </ul>
+                </li>
+                <li>SonarQube:
+                    <ul>
+                        <li>Community Edition es gratuita. Versiones pagas varían según el tamaño de la organización.</li>
+                    </ul>
+                </li>
+                <li>GitHub:
+                    <ul>
+                        <li>Plan GitHub Team: $4 por usuario al mes.</li>
+                        <li>Plan GitHub Enterprise: $21 por usuario al mes.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 id="escalamiento-usuarios">4.3. Escalamiento de Usuarios</h3>
+            <ul>
+                <li>Fase Beta (100 usuarios):
+                    <ul>
+                        <li>Estimación de costos de AWS para instancias pequeñas y almacenamiento reducido.</li>
+                    </ul>
+                </li>
+                <li>Escalamiento (1000 a 10000 usuarios):
+                    <ul>
+                        <li>Aumento de recursos en EC2 y RDS.</li>
+                        <li>Incremento proporcional en costos de almacenamiento y balanceo de carga.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 id="estimacion-total-costos-mensuales">4.4. Estimación Total de Costos Mensuales</h3>
+            <ul>
+                <li>Fase Beta: Aproximadamente $150 - $300 mensuales.</li>
+                <li>Escalamiento a 1000 usuarios: Aproximadamente $600 - $1000 mensuales.</li>
+                <li>Escalamiento a 10000 usuarios: Aproximadamente $3000 - $5000 mensuales.</li>
+            </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Mi Proyecto</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buenas Prácticas</title>
+    <link rel="icon" href="../Imagenes/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../Imagenes/Logo Sena.png" class="logo"/>
+                <!-- <h1>Entrega Final</h1> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../tema1.html" class="selected">Implementación</a></li>
+                    <li><a href="../tema2.html">Despliegue</a></li>
+                    <li><a href="../tema3.html">Documentación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content-body">
+            <div class="table">
+                <h2>Tabla de Contenido</h2>
+                <ul>
+                    <li><a href="#buenas-practicas">Buenas prácticas</a>
+                        <ul>
+                            <li><a href="#github-gestion-ramas">GitHub y Gestión de Ramas</a></li>
+                            <li><a href="#autorizaciones-revisiones-codigo">Autorizaciones y Revisiones de Código</a></li>
+                            <li><a href="#seguridad-gestion-accesos">Seguridad y Gestión de Accesos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-info">
+                <article>
+                    <h2 id="buenas-practicas">Buenas prácticas</h2>
+
+                <h3 id="github-gestion-ramas">1.2. GitHub y Gestión de Ramas</h3>
+                <ul>
+                    <li>Ramas:
+                        <ul>
+                            <li>main/master: Ramas de producción.</li>
+                            <li>dev: Rama para el desarrollo activo.</li>
+                            <li>test: Rama para la integración y pruebas antes de pasar a producción.</li>
+                        </ul>
+                    </li>
+                    <li>Políticas de Rama:
+                        <ul>
+                            <li>Uso de Pull Requests (PRs) para la integración de cambios.</li>
+                            <li>Revisiones de código obligatorias por al menos un revisor.</li>
+                            <li>Integración continua para validar PRs antes de fusionar.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 id="autorizaciones-revisiones-codigo">1.3. Autorizaciones y Revisiones de Código</h3>
+                <ul>
+                    <li>Revisiones de Código:
+                        <ul>
+                            <li>Realizadas por QA, Scrum Master o PM.</li>
+                            <li>Validación de calidad y cumplimiento de estándares.</li>
+                        </ul>
+                    </li>
+                    <li>Autorizaciones:
+                        <ul>
+                            <li>Uso de IAM en AWS para gestionar permisos y accesos.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 id="seguridad-gestion-accesos">1.4. Seguridad y Gestión de Accesos</h3>
+                <ul>
+                    <li>IAM Policies:
+                        <ul>
+                            <li>Configuración de roles y políticas para controlar el acceso a los recursos de AWS.</li>
+                        </ul>
+                    </li>
+                    <li>Seguridad en VPC:
+                        <ul>
+                            <li>Uso de subredes privadas para las instancias de base de datos y grupos de seguridad para limitar el acceso.</li>
+                        </ul>
+                    </li>
+                </ul>
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Mi Proyecto</p>
+        </div>
+    </footer>
+</body>
+</html>

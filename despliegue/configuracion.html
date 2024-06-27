@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="icon" href="../Imagenes/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../Imagenes/Logo Sena.png" class="logo"/>
+                <!-- <h1>Entrega Final</h1> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../tema1.html">Implementación</a></li>
+                    <li><a href="../tema2.html" class="selected">Despliegue</a></li>
+                    <li><a href="../tema3.html">Documentación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content-body">
+            <div class="table">
+                <h2>Tabla de Contenido</h2>
+                    <ul>
+                        <li><a href="#configuracion-despliegue">Configuración de Despliegue</a>
+                            <ul>
+                                <li><a href="#integracion-despliegue-continuos">Integración y Despliegue Continuos (CI/CD)</a></li>
+                                <li><a href="#monitoreo-logging">Monitoreo y Logging</a></li>
+                            </ul>
+                        </li>
+                    </ul>  
+            </div>
+            <div class="content-info">
+                <h2 id="configuracion-despliegue">3. Configuración de Despliegue</h2>
+                <h3 id="integracion-despliegue-continuos">3.1. Integración y Despliegue Continuos (CI/CD)</h3>
+                <ul>
+                    <li>Herramientas:
+                        <ul>
+                            <li>Jenkins: Para la configuración de pipelines de CI/CD.</li>
+                            <li>SonarQube: Para el análisis estático del código.</li>
+                            <li>JUnit: Para pruebas unitarias en Java.</li>
+                            <li>Docker: Para la creación de contenedores consistentes en todas las etapas de despliegue.</li>
+                        </ul>
+                    </li>
+                    <li>Pipelines de Jenkins:
+                        <ul>
+                            <li>Pipeline de Desarrollo: Compilación, pruebas, análisis de calidad y despliegue en dev.</li>
+                            <li>Pipeline de Pruebas: Despliegue en test y ejecución de pruebas automatizadas.</li>
+                            <li>Pipeline de Producción: Despliegue en prod y monitoreo post-despliegue.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 id="monitoreo-logging">3.2. Monitoreo y Logging</h3>
+                <ul>
+                    <li>CloudWatch Logs:
+                        <ul>
+                            <li>Configuración de logs para aplicaciones y servidores.</li>
+                        </ul>
+                    </li>
+                    <li>Alarmas de CloudWatch:
+                        <ul>
+                            <li>Configuración de alarmas para monitorear el rendimiento y la disponibilidad de la aplicación.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Mi Proyecto</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificación</title>
+    <link rel="icon" href="../Imagenes/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../Imagenes/Logo Sena.png" class="logo"/>
+                <!-- <h1>Entrega Final</h1> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../tema1.html">Implementación</a></li>
+                    <li><a href="../tema2.html" class="selected">Despliegue</a></li>
+                    <li><a href="../tema3.html">Documentación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content-body">
+            <div class="table">
+                <h2>Tabla de Contenido</h2>
+                    <ul>
+                        <li><a href="#planificacion-despliegue">Planificación de Despliegue</a>
+                            <ul>
+                                <li><a href="#tipo-instancias-aws">Tipo de Instancias en AWS</a></li>
+                                <li><a href="#backups">Backups</a></li>
+                                <li><a href="#requisitos-minimos-despliegue">Requisitos Mínimos para el Despliegue</a></li>
+                                <li><a href="#redes-internas-ip-publicas">Redes Internas y IP Públicas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+            <div class="content-info">
+                <h2 id="planificacion-despliegue">Planificación de Despliegue</h2>
+                <p>Este documento detalla la planificación del despliegue de una aplicación con un backend en Java y Spring Boot, base de datos relacional en MySQL y un frontend desacoplado desarrollado con Kotlin y Jetpack Compose. Se utilizarán los servicios de AWS para la infraestructura, incluyendo servidores, instancias de cómputo, instancias de base de datos y balanceadores de carga. Además, se implementarán procedimientos y políticas para las etapas de desarrollo, prueba y despliegue, utilizando herramientas como GitHub, SonarQube, Jenkins y pipelines para garantizar un despliegue seguro.</p>
+                
+                <h3 id="tipo-instancias-aws">Tipo de Instancias en AWS</h3>
+                <ul>
+                    <li>Computación (EC2):
+                        <ul>
+                            <li>Tipo de instancia: t3.medium para desarrollo y pruebas, y t3.large para producción.</li>
+                            <li>Sistema operativo: Amazon Linux 2, debido a su compatibilidad con las herramientas de AWS y su optimización para rendimiento.</li>
+                        </ul>
+                    </li>
+                    <li>Base de Datos (RDS):
+                        <ul>
+                            <li>Tipo de instancia: db.t3.medium para desarrollo y pruebas, y db.m5.large para producción.</li>
+                            <li>Motor de base de datos: MySQL.</li>
+                        </ul>
+                    </li>
+                    <li>Almacenamiento Estático (S3):
+                        <ul>
+                            <li>Uso de buckets S3 para almacenamiento de archivos estáticos y backups.</li>
+                        </ul>
+                    </li>
+                    <li>Elastic Load Balancer (ELB):
+                        <ul>
+                            <li>Para distribuir el tráfico entre múltiples instancias de EC2.</li>
+                        </ul>
+                    </li>
+                    <li>VPC (Virtual Private Cloud):
+                        <ul>
+                            <li>Para configurar una red virtual segura.</li>
+                        </ul>
+                    </li>
+                    <li>IAM (Identity and Access Management):
+                        <ul>
+                            <li>Para la gestión de usuarios y permisos.</li>
+                        </ul>
+                    </li>
+                    <li>CloudWatch:
+                        <ul>
+                            <li>Para el monitoreo y logging.</li>
+                        </ul>
+                    </li>
+                    <li>Route 53:
+                        <ul>
+                            <li>Para la gestión de DNS.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3 id="backups">Backups</h3>
+                <ul>
+                    <li>Base de Datos:
+                        <ul>
+                            <li>Configuración de backups automáticos en RDS con una retención de 7 días.</li>
+                            <li>Realización de snapshots manuales antes de cambios significativos.</li>
+                        </ul>
+                    </li>
+                    <li>Instancias EC2:
+                        <ul>
+                            <li>Snapshots regulares de las instancias EC2 para asegurar la recuperación en caso de fallos.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3 id="requisitos-minimos-despliegue">Requisitos Mínimos para el Despliegue</h3>
+                <ul>
+                    <li>Instancias EC2:
+                        <ul>
+                            <li>Mínimo 2 vCPUs y 4 GB de RAM para instancias de desarrollo.</li>
+                            <li>Mínimo 4 vCPUs y 16 GB de RAM para instancias de producción.</li>
+                        </ul>
+                    </li>
+                    <li>RDS:
+                        <ul>
+                            <li>Almacenamiento SSD con al menos 20 GB para desarrollo y 100 GB para producción.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3 id="redes-internas-ip-publicas">Redes Internas y IP Públicas</h3>
+                <ul>
+                    <li>VPC (Virtual Private Cloud):
+                        <ul>
+                            <li>Configuración de una VPC con subredes públicas y privadas.</li>
+                            <li>Subredes privadas para las instancias de base de datos.</li>
+                            <li>Subredes públicas para instancias de EC2 con IP públicas para acceso a APIs del backend.</li>
+                        </ul>
+                    </li>
+                    <li>Elastic IPs:
+                        <ul>
+                            <li>Asignación de Elastic IPs para instancias de EC2 que requieran acceso directo desde internet.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Mi Proyecto</p>
+        </div>
+    </footer>
+</body>
+</html>
